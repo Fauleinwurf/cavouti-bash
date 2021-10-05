@@ -13,10 +13,13 @@
 #VERSION: 1.0.2
 #DATUM: 05.10.2021
 
-echo "File 1: $1";
+echo "Files:";
 echo "File 1: $1";
 echo "File 2: $2";
 echo "====================================";
+
+# Clear merged.txt
+echo "Merged:" > merged.txt
 
 # Prüfen ob Parameter gesetzt wurden
 if [[ -f "$1" && -f "$2" ]]; then
@@ -52,7 +55,7 @@ if [[ -f "$1" && -f "$2" ]]; then
       ((differentRowCount=differentRowCount+1))
       echo "Zeile nicht gleich"
     else
-      echo "$nextRowFile1" > merged.txt
+      echo "$nextRowFile1" >> merged.txt
       echo "Zeilen gleich"
     fi
     ((i=i+1))
