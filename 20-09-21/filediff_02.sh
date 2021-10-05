@@ -33,7 +33,7 @@ if [[ -f "$1" && -f "$2" ]]; then
   fi
 
   differentRowCount=0
-  file1Rows=$(("$(wc -l <"$file1")" + 1))
+  file1Rows=$(("$(wc -l < "$file1")"+1))
 
   # Loop durch alle Zeilen des Files
   i=1
@@ -48,15 +48,16 @@ if [[ -f "$1" && -f "$2" ]]; then
     echo ""
 
     #Prüfen ob Zeilen ungleich sind
-    if [[ "$nextRowFile1" != "$nextRowFile2" ]]; then
-      ((differentRowCount = differentRowCount + 1))
+    if [[ "$nextRowFile1" != "$nextRowFile2" ]];
+    then
+      ((differentRowCount=differentRowCount+1))
       echo "Zeile nicht gleich"
     else
-      echo "$nextRowFile1" >>merged.txt
+      echo "$nextRowFile1" >> merged.txt
       echo "Zeilen gleich"
     fi
-    ((i = i + 1))
-    echo "===================================="
+    ((i=i+1))
+  echo "===================================="
 
   done
   echo ""
