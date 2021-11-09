@@ -17,7 +17,7 @@
 # Description: Gestaltet ein File um das es nur deutsche Texte, Hauptgruppen und zeigt nur noch die zwei Hauptspalten an.
 # Parameter fuer sort: 
 # 
-# Autoren: Emanuel Constaniti 
+# Autoren:
 # Version: 1.0 
 # Datum: 22.10.2021
 
